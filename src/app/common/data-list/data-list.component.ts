@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-data-list',
@@ -11,5 +13,21 @@ export class DataListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+@Input() dataList: User[] = [];
 
+@Output() selectClick: EventEmitter<User> = new EventEmitter;
+@Output() updateClick: EventEmitter<User> = new EventEmitter;
+@Output() deleteClick: EventEmitter<User> = new EventEmitter;
+
+onSelectClick(user: User): void {
+  this.selectClick.emit(user);
+}
+
+onUpdateClick(user: User): void {
+  this.updateClick.emit(user);
+}
+
+onDeleteClick(user: User): void {
+  this.deleteClick.emit(user);
+}
 }

@@ -18,9 +18,9 @@ export class ActionButtonGroupComponent implements OnInit {
     this.selectClick.emit(true);
   }
   onUpdateButtonClick(): void {
-    this.selectClick.emit(true);
+    this.updateClick.emit(true);
   }
   onDeleteButtonClick(): void {
-    this.selectClick.emit(true);
+    this.deleteClick.emit(true);
   }
 }

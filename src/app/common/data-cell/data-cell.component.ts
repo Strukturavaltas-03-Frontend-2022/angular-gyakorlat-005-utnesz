@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from '@angular/';
+import { User } from 'src/app/model/user';
 @Component({
   selector: 'app-data-cell',
   templateUrl: './data-cell.component.html',
